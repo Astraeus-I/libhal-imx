@@ -12,20 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <libhal-__platform__/output_pin.hpp>
+#include <libhal-imx/output_pin.hpp>
 
 #include <boost/ut.hpp>
 
-namespace hal::__platform__ {
-void __platform___test()
+namespace hal::imx {
+void imx_test()
 {
   using namespace boost::ut;
   using namespace std::literals;
 
-  "__platform__::create()"_test = []() {
+  "imx::create()"_test = []() {
     // Setup
     // Exercise
     // Verify
   };
 };
-}  // namespace hal::__platform__
+}  // namespace hal::imx

@@ -45,7 +45,7 @@ find_package(libhal-util REQUIRED CONFIG)
 find_package(libhal-mock REQUIRED CONFIG)
 
 add_executable(${PROJECT_NAME}
-  __platform__.test.cpp
+  imx.test.cpp
   main.test.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC . ../include)
@@ -75,4 +75,4 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
   libhal::libhal
   libhal::util
   libhal::mock
-  libhal-__platform__)
+  libhal-imx)

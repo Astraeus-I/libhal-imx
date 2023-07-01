@@ -14,17 +14,17 @@
 
 cmake_minimum_required(VERSION 3.15)
 
-project(libhal-__platform__ VERSION 0.0.1 LANGUAGES CXX)
+project(libhal-imx VERSION 0.0.1 LANGUAGES CXX)
 
 find_package(libhal REQUIRED CONFIG)
 find_package(libhal-util REQUIRED CONFIG)
 
-add_library(libhal-__platform__ src/output_pin.cpp)
+add_library(libhal-imx src/output_pin.cpp)
 
-target_include_directories(libhal-__platform__ PUBLIC include)
-target_compile_features(libhal-__platform__ PRIVATE cxx_std_20)
-target_compile_options(libhal-__platform__ PRIVATE -Wall -Wextra)
-target_link_libraries(libhal-__platform__ PRIVATE
+target_include_directories(libhal-imx PUBLIC include)
+target_compile_features(libhal-imx PRIVATE cxx_std_20)
+target_compile_options(libhal-imx PRIVATE -Wall -Wextra)
+target_link_libraries(libhal-imx PRIVATE
   libhal::libhal
   libhal::util
 )
@@ -33,4 +33,4 @@ if(NOT BUILD_TESTING STREQUAL OFF)
   add_subdirectory(tests)
 endif()
 
-install(TARGETS libhal-__platform__)
+install(TARGETS libhal-imx)

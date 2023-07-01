@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace hal::__platform__ {
-extern void __platform___test();
-}  // namespace hal::__platform__
+namespace hal::imx {
+extern void imx_test();
+}  // namespace hal::imx
 
 int main()
 {
-  hal::__platform__::__platform___test();
+  hal::imx::imx_test();
 }

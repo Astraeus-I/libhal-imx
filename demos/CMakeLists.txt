@@ -17,8 +17,8 @@ cmake_minimum_required(VERSION 3.15)
 # Set project name to demos
 project(demos VERSION 0.0.1 LANGUAGES CXX)
 
-# Import the libhal-__platform__ library/package (and all of its dependencies)
-find_package(libhal-__platform__ REQUIRED CONFIG)
+# Import the libhal-imx library/package (and all of its dependencies)
+find_package(libhal-imx REQUIRED CONFIG)
 
 # List of demo applications
 # To add a new demo to the list, simply add its filename without the .cpp
@@ -27,7 +27,7 @@ set(DEMOS blinker)
 
 add_library(startup_code main.cpp)
 target_compile_options(startup_code PRIVATE -g)
-target_link_libraries(startup_code PRIVATE libhal::__platform__)
+target_link_libraries(startup_code PRIVATE libhal::imx)
 
 foreach(demo IN LISTS DEMOS)
     set(current_project ${demo}.elf)
@@ -36,6 +36,6 @@ foreach(demo IN LISTS DEMOS)
     target_compile_features(${current_project} PRIVATE cxx_std_20)
     target_link_libraries(${current_project} PRIVATE
         startup_code
-        libhal::__platform__)
+        libhal::imx)
     libhal_post_build(${current_project})
 endforeach()

@@ -24,15 +24,15 @@ import os
 required_conan_version = ">=1.50.0"
 
 
-class libhal___platform___conan(ConanFile):
-    name = "libhal-__platform__"
+class libhal_imx_conan(ConanFile):
+    name = "libhal-imx"
     version = "0.0.1"
     license = "Apache-2.0"
     url = "https://github.com/conan-io/conan-center-index"
-    homepage = "https://libhal.github.io/libhal-__platform__"
-    description = ("A collection of drivers and libraries for the __platform__ "
+    homepage = "https://libhal.github.io/libhal-imx"
+    description = ("A collection of drivers and libraries for the imx "
                    "series microcontrollers.")
-    topics = ("microcontroller", "__platform__",)
+    topics = ("microcontroller", "imx",)
     settings = "compiler", "build_type", "os", "arch"
     exports_sources = ("include/*", "linker_scripts/*", "tests/*", "LICENSE",
                        "CMakeLists.txt", "src/*")
@@ -130,11 +130,11 @@ class libhal___platform___conan(ConanFile):
         cmake.install()
 
     def package_info(self):
-        self.cpp_info.set_property("cmake_target_name", "libhal::__platform__")
-        self.cpp_info.libs = ["libhal-__platform__"]
+        self.cpp_info.set_property("cmake_target_name", "libhal::imx")
+        self.cpp_info.libs = ["libhal-imx"]
 
         if self._bare_metal and self._is_me:
             linker_path = os.path.join(self.package_folder, "linker_scripts")
-            link_script = "-Tlibhal-__platform__/" + \
+            link_script = "-Tlibhal-imx/" + \
                 str(self.options.platform) + ".ld"
             self.cpp_info.exelinkflags = ["-L" + linker_path, link_script]

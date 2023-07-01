@@ -38,7 +38,7 @@ class demos(ConanFile):
         self.tool_requires("libhal-cmake-util/1.0.0")
 
     def requirements(self):
-        self.requires("libhal-__platform__/0.0.1")
+        self.requires("libhal-imx/0.0.1")
 
     def build(self):
         cmake = CMake(self)

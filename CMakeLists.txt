@@ -19,7 +19,13 @@ project(libhal-imx VERSION 0.0.1 LANGUAGES CXX)
 find_package(libhal REQUIRED CONFIG)
 find_package(libhal-util REQUIRED CONFIG)
 
-add_library(libhal-imx src/output_pin.cpp)
+add_library(libhal-imx 
+src/output_pin.cpp
+src/input_pin.cpp
+src/pin.cpp
+# src/power.cpp
+)
+
 
 target_include_directories(libhal-imx PUBLIC include)
 target_compile_features(libhal-imx PRIVATE cxx_std_20)

@@ -40,8 +40,8 @@ class libhal_imx_conan(ConanFile):
 
     options = {
         "platform": [
-            "profile1",
-            "profile2",
+            "teensy4",
+            "teensy41",
             "not-me"
         ],
     }
@@ -52,8 +52,8 @@ class libhal_imx_conan(ConanFile):
 
     @property
     def _is_me(self):
-        return (self.options.platform == "profile1" or
-                self.options.platform == "profile2")
+        return (self.options.platform == "teensy4" or
+                self.options.platform == "teensy41")
 
     @property
     def _min_cppstd(self):
